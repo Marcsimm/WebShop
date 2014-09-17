@@ -1,0 +1,49 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET	     /		                                controllers.startpagemodel.startpage()
+
+
+GET		/listAllproduct							controllers.Productmodel.listallproduct()
+GET		/createproduct							controllers.Productmodel.newproductform()
+POST	/createproduct							controllers.Productmodel.createproduct()	
+GET    /api/products							controllers.Productmodel.listalljsonproduct()
+			
+POST    /listAllproduct_category				controllers.Categorymodel.listAllproduct_category()
+GET    /api/listAllproduct_category				controllers.Categorymodel.listAlljsonproduct_category()
+
+GET		/showcategory/:id						controllers.Categorymodel.showcategory(id: Int)
+GET	    /listAllcategory						controllers.Categorymodel.listallcategory()
+GET		/createcategory							controllers.Categorymodel.newcategoryform()
+POST	/createcategory							controllers.Categorymodel.createcategory()
+GET    /api/categories							controllers.Categorymodel.listalljsoncategory()
+
+
+GET		/listAlluser							controllers.Usermodel.listAlluser()
+GET		/createuser								controllers.Usermodel.newuserform()
+POST	/createuser								controllers.Usermodel.createuser()
+
+
+GET		/createstaff							controllers.Staffmodel.createstaff()
+
+
+GET		/listallshoopingbasket					controllers.Shoppingbasketmodel.listAlshoopingbasket()
+GET		/api/basket								controllers.Shoppingbasketmodel.listAlljsonshoopingbasket()
+GET		/addtobasket							controllers.Shoppingbasketmodel.addtobasket()
+POST	/addtobasket							controllers.Shoppingbasketmodel.addtobasket()
+GET		/addtobasket							controllers.Shoppingbasketmodel.addtobasket()
+
+POST 	/order									controllers.Shoppingbasketmodel.ordernow()
+POST    /orderOnMoblie							controllers.Shoppingbasketmodel.orderOnMobile()
+GET     /api/order								controllers.Shoppingbasketmodel.listalljsonorders()
+
+GET     /            							controllers.MyAuthentication.showLoginForm()
+POST    /										controllers.MyAuthentication.loginUser()
+POST    /Out									controllers.MyAuthentication.logOut()
+
+GET 	/api/staffs								controllers.startpagemodel.listalljsontsaff()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

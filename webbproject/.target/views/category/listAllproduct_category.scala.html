@@ -1,0 +1,33 @@
+@* listAllproduct_category Template File *@
+@(product_category: List[Product_Category])
+@main("all category"){
+
+	
+
+      	
+   <table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 70px;
+    margin-left: 400px;
+    margin-right: 0px;
+    background-color:yellow;
+    font-family:"Times New Roman",Georgia,Serif;
+    font color :red;
+">
+        <thead>
+          <tr>
+            <th>ProductName</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          @for(Product_Category <- product_category ){
+         <td>@Product_Category.product.getProductName()</td>
+          </tr>
+           }
+        </tbody>
+      </table>
+         
+        
+      
+   }

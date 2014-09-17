@@ -1,0 +1,24 @@
+@* listAlluser Template File *@
+
+@(users: List[User]) 
+
+
+
+	<h1>List of users (size:@users.size)</h1>
+
+	<ul>
+		@for(User <- users){
+			<li>Id: @User.getId()</li>
+			<li>Email: @User.getEmail()</li>
+			<li>Firstname: @User.getFirstName()</li>
+			<li>Surname: @User.getSurName()</li>
+			<li>Telephone: @User.getTelephone()</li>
+			<li>Town: @User.getTown()</li>
+			<li>Streetadress: @User.getStreetAddress()</li>
+			<li>Postcode:User.getPostcode()</li>
+			</br>
+		}
+	</ul>
+
+
+

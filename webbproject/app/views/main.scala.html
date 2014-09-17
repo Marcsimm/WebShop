@@ -1,0 +1,212 @@
+@(title: String)(content: Html) 
+
+
+<!DOCTYPE html>
+
+<html><head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	
+<style>	
+
+body{
+
+} 
+</style>
+</head>
+
+<body>
+<nav role="navigation" class="navbar navbar-inverse">
+    
+    <div class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">MyWebShop</a>
+    </div>
+    
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="#"><a href="/">Home</a></li>
+            
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Product <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="/createproduct">Create product</a></li>
+                    <li><a href="/listAllproduct">All products</a></li> 
+                </ul>
+            </li>
+      
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Category <b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="/createcategory">Create category</a></li>
+                    <li><a href="/listAllcategory">All categories</a></li>
+                </ul>
+            </li>
+            
+             <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">User<b class="caret"></b></a>
+                <ul role="menu" class="dropdown-menu">
+                    <li><a href="/createuser">Register new user</a></li>             
+                </ul>
+            </li>
+            
+        </ul>
+     
+      
+
+ @if(!session.containsKey("username")){
+
+  <form class="navbar-form navbar-right" action="/" method="post" role="form">
+
+@if(flash.containsKey("username-empty")){
+
+<div class="alert alert-warning">Username required.</div>
+
+}
+
+
+@if(flash.containsKey("password-empty")){
+
+<div class="alert alert-warning">Password required.</div>
+
+}
+ 
+
+@if(flash.containsKey("no-username-password-match")){
+
+<div class="alert alert-warning">No username exists with this password.</div>
+
+}
+
+  <div class="form-group">
+    <label for="user-name"></label>
+    <input type="text" class="form-control" id="email" name="email" placeholder="Username..">
+  </div>
+
+  <div class="form-group">
+    <label for="passwd"></label>
+    <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Password..">
+  </div>
+  
+   <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+
+
+  <button type="submit" class="btn btn-default">Login</button>
+
+</form>
+
+
+} else {
+
+<form class="navbar-form navbar-right" action="/Out" method="post" role="form">
+
+        <div class="form-group">
+
+        @session.get("username")
+
+        </div>
+
+        <button type="submit" class="btn btn-default">Logout</button>
+
+      </form>
+
+}
+     </ul>
+     
+    <form class="navbar-form navbar-right" action="/" method="post" role="form">
+    
+       <ul class="nav navbar-nav navbar-right">
+     <a href="/listallshoopingbasket" <button class="btn btn-default"><span class="glyphicon glyphicon-shopping-cart"></span></button></a><style="
+     padding-left:30px;
+     "></style>
+    
+    </ul>
+    </form>
+</nav>
+
+
+
+
+<!--Start of carousel-->
+
+   <div id="myCarousel" class="carousel slide">
+        
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+             <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+            
+            <div class="item active">
+              <img src=@routes.Assets.at("images/slide1.jpg")/> 
+                <div class="container">
+                    <div class="carousel-caption">
+                     
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+               <img src=@routes.Assets.at("images/slide2.jpg")/>
+                <div class="container">
+                    <div class="carousel-caption">
+                       
+                    </div>
+                </div>
+            </div>
+            
+               <div class="item">
+               <img src=@routes.Assets.at("images/slide2.jpg")/>
+                <div class="container">
+                    <div class="carousel-caption">
+                       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <img src=@routes.Assets.at("images/slide3.png")/> 
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>My Heading Text</h1>
+                        <p>This tag will contain the text which we want to appear on our slide.</p>
+                        <p><a class="btn btn-large btn-primary">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+        
+    </div>
+    
+ <!--End of carousel-->   
+ @content
+</body>
+</html>
+
+
+
+		

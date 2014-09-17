@@ -1,0 +1,54 @@
+@* form3 Template File *@
+
+@(users : List[User]) 
+@main("cretae user"){
+	
+
+<form action="/createuser" method="post" role="form" style="
+    width: 600px;
+">
+
+  <div class="form-group">
+    <label for="Email">Email</label>
+    <input type="text" class="form-control" id="Email" name="Email" placeholder="Email">
+  
+  
+
+    <label for="FirstName">FirstName</label>
+     <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="FirstName">
+    
+    
+   
+    <label for="SurName">SurName</label>
+     <input type="text" class="form-control" id="Surname" name="SurName" placeholder="SurName">
+    
+    
+    
+    <label for="Password">Password</label>
+     <input type="text" class="form-control" id="Password" name="Password" placeholder="Password">
+    
+   
+    
+    <label for="Adress">Adress</label>
+     <input type="text" class="form-control" id="Adress" name="Adress" placeholder="Adress">
+     
+     
+     <label for="Postcode">Postcode</label>
+     <input type="text" class="form-control" id="Postcode" name="Postcode" placeholder="Postcode">
+    
+    
+    
+    <label for="Adress">Town</label>
+     <input type="text" class="form-control" id="Town" name="Town" placeholder="Town">
+    
+     
+    
+    <label for="PhoneNumber">PhoneNumber</label>
+     <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="PhoneNumber">
+     
+     
+    
+  <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</form>
+    }

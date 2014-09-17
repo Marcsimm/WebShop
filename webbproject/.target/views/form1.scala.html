@@ -1,0 +1,26 @@
+@* form1 Template File *@
+@(staffs: List[Staff], categories: List[Category])
+@main("create category"){
+
+
+
+<form action="/createcategory" method="post" role="form" style="
+    width: 600px;
+">
+  <div class="form-group">
+    <label for="Categoryname">Categoryname</label>
+    <input type="text" class="form-control" id="Categoryname" name="Categoryname" placeholder="Categoryname">
+  </div>
+  
+
+  <div class="form-group">
+    <label for="staffid">staffid</label>
+    <input type="text" class="form-control" id="staffid" name="staffid" placeholder="staffid">
+  </div>
+  
+  
+    
+  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+}

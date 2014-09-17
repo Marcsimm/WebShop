@@ -1,0 +1,48 @@
+@* listAllcategory Template File *@
+
+@(categories: List[Category])
+@main("all category"){
+
+	
+
+      	
+   <table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 70px;
+    margin-left: 400px;
+    margin-right: 0px;
+    background-color:yellow;
+    font-family:"Times New Roman",Georgia,Serif;
+    font color :red;
+">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>CategoryName</th>
+            <th>StaffResponsible</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          @for(Category <- categories){
+           <td>@Category.getId()</td> 
+            <td>@Category.getCategoryname()</td>
+            <td>@Category.staff.getId()</td>
+            
+         <form action="/listAllproduct_category" method="post" role="form">
+          <div class="form-group"> 
+    	<label for="category-id"></label>
+    	<input type="hidden" class="form-control" value="@Category.getId()" id="category-id" name="category-id"/>
+    	<td><button type="submit" class="btn btn-default">Products in this category</button></td>
+    	</form>
+  		</div>
+          </tr>
+          
+  		
+  		
+           }
+        </tbody>
+      </table>
+         
+        }
+      

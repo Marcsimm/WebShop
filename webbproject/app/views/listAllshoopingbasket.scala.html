@@ -1,0 +1,52 @@
+@* listAllshoopingbasket Template File *@
+
+@(shoppingbaskets:List[Shoppingbasket]) 
+@main("basket"){
+
+  	
+   <table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 70px;
+    margin-left: 400px;
+    margin-right: 0px;
+    background-color:yellow;
+    font-family:"Times New Roman",Georgia,Serif;
+    font color :red;
+">
+        <thead>
+          <tr>
+          	
+            <th>ProductName</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Quantity</th
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          @for(Shoppingbasket <- shoppingbaskets){
+          	<td>@Shoppingbasket.product1.getProductName()</td>
+          	   <td>@Shoppingbasket.product1.getDescription()</td>
+          	    <td>@(Shoppingbasket.product1.getCost()*Shoppingbasket.getQuantity())</td>  
+          	  	<td>@Shoppingbasket.getQuantity()</td>
+          	  
+          </tr>
+           }
+ 			
+        </tbody>
+      </table>
+      
+   <form action="/order" method="post" role="form" style="
+    margin-left: 300px;
+">
+      <label for="deleteall" <="" label="">
+		<button type="submit" class="btn btn-default" name="deleteall" value="yes" style="margin-left: 2%;">Order</button>
+		
+        
+
+
+
+     </label></form>
+        }
+
+     

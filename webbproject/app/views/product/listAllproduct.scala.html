@@ -1,0 +1,78 @@
+@* listAllproduct Template File *@
+
+@(products: List[Product]) 
+@main("all products"){
+
+
+	
+
+	<table class="form1 table table-bordered" style="
+    width:600px;
+    margin-top: 70px;
+    margin-left: 400px;
+    margin-right: 0px;
+    background-color:yellow;
+    font-family:"Times New Roman",Georgia,Serif;
+    font color :red;
+">
+        <thead>
+        	
+            <th>ProductName</th>
+            <th>Description</th>
+            <th>Cost</th>						
+            <th>Quantity</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          @for(Product <- products){
+           <td>@Product.getProductName()</td>
+           <td>@Product.getDescription()</td>
+           <td>@Product.getCost()</td>
+           
+        <form action="/addtobasket" method="post" role="form">
+    	<div class="form-group">
+    	<label for="quantity"></label>
+    	<td><select name="quantity" class="form-control" style="width:70%;">
+    		<option>1</option>
+    		<option>2</option>
+			<option>3</option>
+    		<option>4</option>
+    		<option>5</option>
+    		<option>6</option>
+    		<option>7</option>
+    		<option>8</option>
+    		<option>9</option>
+    		<option>10</option>
+    	</select></td>
+  	</div>
+
+  		
+          <div class="form-group"> 
+    	<label for="product-id"></label>
+    	<input type="hidden" class="form-control" value="@Product.getId()" id="product-id" name="product-id"/>
+    	<td><button type="submit" class="btn btn-default">Buy</button></td>
+    	</form>
+  		</div>
+  		
+  		
+  		</tr>
+         
+          
+          
+          }
+       
+      </table>
+      
+      
+      
+ 
+ }
+ 
+
+          
+          
+ 
+ 
+ 
