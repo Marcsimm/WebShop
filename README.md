@@ -1,4 +1,4 @@
 WebShop
 =======
 
-a project in webbprogrammering
+A webshop i made with Play Framework.
